@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+========================================
+LIÇÃO 6.3: Alinhamento com Flexbox
+========================================
+ 
+Neste ficheiro praticamos:
+- justify-content: alinha no eixo PRINCIPAL (horizontal)
+- align-items: alinha no eixo CRUZADO (vertical)
+ 
+CONCEITO CHAVE:
+- justify-content: flex-start, center, flex-end, space-between
+- align-items: flex-start, center, flex-end, stretch
+ 
+========================================
+EXEMPLO PRÁTICO: Header e Centrar
+========================================
+-->
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alinhamento Flexbox</title>
+  <link rel="stylesheet" href="aula8.css" />
+</head>
+<body>
+ 
+  <h1>Alinhamento com Flexbox</h1>
+ 
+  <!-- Exemplo 1: justify-content -->
+  <section class="exemplo">
+    <h2>1. justify-content (horizontal)</h2>
+ 
+    <p>flex-start (padrão):</p>
+    <div class="container justify-start">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+ 
+    <p>center:</p>
+    <div class="container justify-center">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+ 
+    <p>space-between:</p>
+    <div class="container justify-between">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </section>
+ 
+  <!-- Exemplo 2: align-items -->
+  <section class="exemplo">
+    <h2>2. align-items (vertical)</h2>
+ 
+    <p>flex-start (topo):</p>
+    <div class="container alto align-start">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+ 
+    <p>center (centro):</p>
+    <div class="container alto align-center">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+ 
+    <p>flex-end (fundo):</p>
+    <div class="container alto align-end">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </section>
+ 
+  <!-- Exemplo 3: Centrar perfeitamente -->
+  <section class="exemplo">
+    <h2>3. Centrar Perfeitamente</h2>
+    <p>justify-content: center + align-items: center</p>
+    <div class="container centrar-perfeito">
+      <div class="item grande">Centrado!</div>
+    </div>
+  </section>
+ 
+  <!-- Exemplo prático: Header -->
+  <section class="exemplo">
+    <h2>4. Exemplo: Header</h2>
+    <header class="header">
+      <div class="logo">MinhaMarca</div>
+      <nav class="menu">
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </header>
+  </section>
+ 
+</body>
+</html>
+ 

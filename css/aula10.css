@@ -1,0 +1,90 @@
+.caixa-normal{
+  display:inline-block;
+  width: 100px;
+  padding: 15px; /* espaco interno */
+  background: #e0e0e0; /* cinza */
+  text-align: center; /* texto centrado */
+  border-radius: 4px; /* cantos */
+}
+ 
+ 
+.caixa-relative{
+    display:inline-block;
+    position: relative;
+    top: 20px;
+    left: 30px;
+    width: 200px; /* largura */
+    padding: 15px; /* espaco interno */
+    background: #f59e0b; /* laranja */
+    color: white; /* texto branco */
+    text-align: center; /* texto centrado */
+    border-radius: 4px; /* cantos */
+}
+ 
+ 
+.card{
+  position: relative;
+  width: 200px; /* largura fixa */
+padding: 20px; /* espaco interno */
+background: white; /* fundo */
+border: 1px solid #e0e0e0; /* borda */
+border-radius: 8px; /* cantos */
+box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* sombra */
+}
+ 
+ 
+ 
+.badge{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ef4444; /* vermelho */
+  color: white; /* texto branco */
+  padding: 5px 10px; /* espaco interno */
+  border-radius: 4px; /* cantos */
+  font-size: 12px; /* texto pequeno */
+  font-weight: bold; /* negrito */
+  z-index: 2;
+}
+ 
+.voltar{
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  
+  
+  background-color: #f59e0b;
+  padding: 10px 10px 10px 10px;
+}
+ 
+ 
+.sticky{
+  position: sticky;
+  top: 0px;
+  bottom: 0px;
+  width: 100vw;
+  background-color: blueviolet;
+  z-index: 3;
+  
+}
+ 
+ .btn {
+background: goldenrod;
+color: white;
+margin-top: 10%;
+margin-bottom: 10%;
+width: 300px;
+}
+ 
+.btn:hover{
+  background:#ef4444
+}
+ 
+.btn:active{
+background: blue;
+}
+ 
+.btn:visited{
+  background: blue;
+  }
+ 

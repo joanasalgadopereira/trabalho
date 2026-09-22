@@ -1,0 +1,91 @@
+ 
+*{
+margin: 0px;
+font-family: "Orbitron", sans-serif;
+}
+.hero{
+display: flex;
+flex-direction: row;
+width: 100vw;
+height: 100vh;
+ 
+}
+ 
+ 
+.left{
+width: 50%;
+ 
+background-color: blueviolet;
+background-image: url(https://static.millesima.com/s3/attachements/editorial/h1280px/red-wine-types.jpg);
+background-repeat: no-repeat;
+background-position: 30%;
+background-size:contain ;
+ 
+ 
+}
+ 
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    width: 50%;
+    gap: 5%;
+    
+}
+ 
+h1{
+    font-size: 56px;
+}
+p{
+    font-size: 18px;
+}
+ 
+ 
+ 
+ 
+ 
+.hero2{
+display: flex;
+flex-direction: row-reverse;
+width: 100vw;
+height: 100vh;
+ 
+}
+ 
+ 
+.left2{
+    width: 50%;
+    
+    background-color: antiquewhite;
+    
+    
+    
+    }
+ 
+    @media (max-width: 768px){
+ 
+    .hero{
+        flex-direction: column;
+    }
+    .right{
+    width: 100%;
+    height: 50%;
+    }
+ 
+    .left{
+    width: 100%;
+    height: 50%;
+    }
+ 
+    h1{
+        font-size: 36px;
+    }
+    p{
+        font-size: 14px;
+    }
+ 
+ 
+}
+ 

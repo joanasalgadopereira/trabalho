@@ -1,0 +1,1974 @@
+/* 
+   ENTRE PATAS
+   Trabalho Final
+   CSS principal
+  */
+
+
+/* ---------- FONTES ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap');
+
+
+/* 
+   CONFIGURAÇÕES GERAIS
+    */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    background-color: #f6f1e8;
+    color: #3d403b;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* 
+   CONTENTOR PRINCIPAL
+    */
+
+.container {
+    width: 88%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+.btn {
+    font-family: "Nunito", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ETIQUETAS DE SECÇÃO
+   ========================================================= */
+
+.section-label {
+    display: inline-block;
+
+    color: #d58b6a;
+
+    font-family: "Nunito", Arial, sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.85rem 1.5rem;
+
+    border-radius: 2rem;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #d58b6a;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #be7658;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #5f7564;
+
+    border: 0.12rem solid #5f7564;
+}
+
+.btn-secondary:hover {
+    background-color: #5f7564;
+    color: #ffffff;
+}
+
+.btn-outline {
+    color: #ffffff;
+
+    border: 0.12rem solid #ffffff;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #405346;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    background-color: #f6f1e8;
+
+    padding: 1rem 0;
+
+    border-bottom: 0.08rem solid #e5ded3;
+}
+
+.header-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+/* =========================================================
+   LOGÓTIPO
+   ========================================================= */
+
+.logo {
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 13rem;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-list a {
+    color: #4d514b;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    transition: 0.2s;
+}
+
+.nav-list a:hover {
+    color: #d58b6a;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    padding: 4rem 0 6rem;
+}
+
+.hero-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    align-items: center;
+
+    gap: 5rem;
+}
+
+
+/* ---------- TEXTO ---------- */
+
+.hero-content h1 {
+    color: #405346;
+
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h1 span {
+    color: #6f896f;
+}
+
+.hero-content > p {
+    max-width: 34rem;
+
+    color: #646961;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 2rem;
+}
+
+
+/* ---------- BOTÕES ---------- */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+}
+
+
+/* ---------- PEQUENAS VANTAGENS ---------- */
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1.5rem;
+
+    color: #687268;
+
+    font-size: 0.9rem;
+}
+
+
+/* ---------- IMAGEM ---------- */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    height: 35rem;
+
+    border-radius: 2rem;
+
+    background-color: #dfe6da;
+}
+
+
+/* ---------- CARDS SOBRE A FOTO ---------- */
+
+.hero-badge {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.8rem 1rem;
+
+    border-radius: 1rem;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+
+    font-size: 0.85rem;
+}
+
+.hero-badge strong {
+    color: #405346;
+}
+
+.hero-badge span {
+    color: #777c75;
+}
+
+.hero-badge-top {
+    top: 2rem;
+    left: -2rem;
+}
+
+.hero-badge-bottom {
+    right: -1.5rem;
+    bottom: 2rem;
+}
+
+
+/* =========================================================
+   SERVIÇOS
+   ========================================================= */
+
+.services {
+    padding: 6rem 0;
+
+    background-color: #ffffff;
+}
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+    max-width: 42rem;
+
+    color: #405346;
+}
+
+.section-heading > a {
+    color: #d58b6a;
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------- GRELHA ---------- */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 2rem;
+}
+
+
+/* ---------- CARTÕES ---------- */
+
+.service-card {
+    overflow: hidden;
+
+    background-color: #f6f1e8;
+
+    border-radius: 1.5rem;
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-0.4rem);
+
+    box-shadow:
+        0 0.8rem 2rem rgba(64, 83, 70, 0.12);
+}
+
+.service-card img {
+    height: 15rem;
+
+    background-color: #dfe6da;
+}
+
+.service-content {
+    padding: 1.8rem;
+}
+
+.service-content h3 {
+    color: #405346;
+
+    margin: 1rem 0;
+}
+
+.service-content p {
+    color: #686d67;
+
+    margin-bottom: 1.4rem;
+}
+
+.service-content > a {
+    color: #d58b6a;
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------- TAG DO SERVIÇO ---------- */
+
+.service-tag {
+    display: inline-block;
+
+    padding: 0.35rem 0.75rem;
+
+    border-radius: 1rem;
+
+    background-color: #dce7d7;
+
+    color: #526754;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ÁREA DE ATUAÇÃO
+   ========================================================= */
+
+.coverage {
+    padding: 5rem 0;
+
+    background-color: #f6f1e8;
+}
+
+.coverage-container {
+    text-align: center;
+}
+
+.coverage-content {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.coverage-content h2 {
+    color: #405346;
+
+    margin-bottom: 1.5rem;
+}
+
+.coverage-content > p {
+    color: #646961;
+
+    font-size: 1.05rem;
+
+    margin-bottom: 2rem;
+}
+
+.coverage-locations {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.coverage-locations span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.7rem 1.2rem;
+
+    border-radius: 2rem;
+
+    background-color: #dde7d9;
+
+    color: #405346;
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+}
+
+.coverage-note {
+    color: #777c75 !important;
+
+    font-size: 0.95rem !important;
+
+    margin-bottom: 1.5rem !important;
+}
+
+
+/* =========================================================
+   PORQUÊ CONFIAR
+   ========================================================= */
+
+.trust {
+    padding: 6rem 0;
+}
+
+.trust-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 5rem;
+
+    align-items: center;
+}
+
+.trust-content h2 {
+    color: #405346;
+
+    margin-bottom: 2.5rem;
+}
+
+
+/* ---------- LISTA ---------- */
+
+.trust-list {
+    display: grid;
+
+    gap: 1.7rem;
+}
+
+.trust-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 1rem;
+}
+
+.trust-icon {
+    min-width: 3rem;
+    height: 3rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #a8b89f;
+
+    color: #ffffff;
+
+    font-size: 1.2rem;
+}
+
+.trust-item h3 {
+    color: #405346;
+
+    margin-bottom: 0.3rem;
+}
+
+.trust-item p {
+    color: #70756f;
+}
+
+
+/* ---------- IMAGEM ---------- */
+
+.trust-image img {
+    height: 37rem;
+
+    border-radius: 2rem;
+
+    background-color: #dce7d7;
+}
+
+
+/* =========================================================
+   SOBRE MIM
+   ========================================================= */
+
+.about {
+    padding: 6rem 0;
+
+    background-color: #dde7d9;
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 5rem;
+
+    align-items: center;
+}
+
+.about-image img {
+    height: 34rem;
+
+    border-radius: 2rem;
+
+    background-color: #b9c9b2;
+}
+
+.about-content h2 {
+    color: #405346;
+
+    margin-bottom: 1.5rem;
+}
+
+.about-content h2 span {
+    color: #d58b6a;
+}
+
+.about-content p {
+    max-width: 34rem;
+
+    color: #5c665d;
+
+    margin-bottom: 1.3rem;
+}
+
+.about-content .btn {
+    margin-top: 1rem;
+}
+
+
+/* =========================================================
+   TESTEMUNHOS
+   ========================================================= */
+
+.testimonials {
+    padding: 6rem 0;
+
+    background-color: #ffffff;
+}
+
+.testimonials > .container > h2 {
+    color: #405346;
+
+    margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    padding: 2rem;
+
+    border-radius: 1.5rem;
+
+    background-color: #f6f1e8;
+
+    border: 0.08rem solid #e4ded4;
+}
+
+.testimonial-featured {
+    background-color: #dde7d9;
+
+    border-color: #c8d7c2;
+}
+
+.stars {
+    color: #d58b6a;
+
+    margin-bottom: 1rem;
+
+    letter-spacing: 0.15rem;
+}
+
+.testimonial-card > p {
+    color: #60655f;
+
+    margin-bottom: 2rem;
+}
+
+.testimonial-author {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.testimonial-author strong {
+    color: #405346;
+}
+
+.testimonial-author span {
+    color: #878b85;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   CTA / MARCAÇÃO
+   ========================================================= */
+
+.booking {
+    padding: 5rem 0;
+
+    background-color: #ffffff;
+}
+
+.booking-box {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 3rem;
+
+    padding: 4rem;
+
+    border-radius: 2rem;
+
+    background-color: #405346;
+
+    color: #ffffff;
+}
+
+.booking-box h2 {
+    max-width: 38rem;
+
+    margin-bottom: 1rem;
+}
+
+.booking-box p {
+    max-width: 36rem;
+
+    color: #d7ddd6;
+}
+
+.booking-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    min-width: 12rem;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    padding-top: 5rem;
+
+    background-color: #324138;
+
+    color: #dbe1dc;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1.4fr;
+
+    gap: 3rem;
+}
+
+
+/* ---------- LOGÓTIPO FOOTER ---------- */
+
+.footer .logo {
+    display: inline-block;
+
+    margin-bottom: 1.5rem;
+}
+
+.footer .logo img {
+    width: 14rem;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ---------- TEXTO FOOTER ---------- */
+
+.footer-brand p {
+    max-width: 25rem;
+
+    color: #bdc7bf;
+}
+
+.footer h3 {
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer li {
+    margin-bottom: 0.6rem;
+}
+
+.footer a {
+    color: #bdc7bf;
+
+    transition: 0.2s;
+}
+
+.footer a:hover {
+    color: #ffffff;
+}
+
+.footer .btn-primary {
+    color: #ffffff;
+
+    margin-top: 1rem;
+}
+
+
+/* ---------- PARTE INFERIOR ---------- */
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    margin-top: 4rem;
+
+    padding: 1.5rem 0;
+
+    border-top:
+        0.08rem solid rgba(255, 255, 255, 0.15);
+
+    color: #9fa9a1;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 60rem) {
+
+    .nav {
+        display: none;
+    }
+
+    .logo img {
+        width: 11rem;
+    }
+
+    .hero-container,
+    .trust-container,
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-image {
+        order: 2;
+    }
+
+    .hero-image img,
+    .trust-image img,
+    .about-image img {
+        height: 28rem;
+    }
+
+    .services-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .booking-buttons {
+        flex-direction: row;
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TELEMÓVEL
+   ========================================================= */
+
+@media (max-width: 40rem) {
+
+    .container {
+        width: 90%;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+.header {
+    padding: 0.8rem 0;
+}
+
+.header-container {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+.logo img {
+    width: 9.5rem;
+}
+
+.header-container > .btn {
+    display: none;
+}
+
+
+/* ---------- NAVEGAÇÃO MOBILE ---------- */
+
+.nav {
+    display: block;
+
+    width: 100%;
+}
+
+.nav-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 0.7rem 1.2rem;
+
+    width: 100%;
+
+    padding-top: 0.8rem;
+
+    border-top: 0.08rem solid rgba(64, 83, 70, 0.15);
+}
+
+.nav-list a {
+    font-size: 0.9rem;
+}
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding-top: 2rem;
+    }
+
+    .hero-container {
+        gap: 3rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-features {
+        flex-direction: column;
+
+        gap: 0.6rem;
+    }
+
+    .hero-image img {
+        height: 24rem;
+    }
+
+    .hero-badge-top {
+        left: 1rem;
+    }
+
+    .hero-badge-bottom {
+        right: 1rem;
+    }
+
+
+    /* ---------- SERVIÇOS ---------- */
+
+    .section-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card img {
+        height: 13rem;
+    }
+
+
+    /* ---------- ÁREA DE ATUAÇÃO ---------- */
+
+    .coverage {
+        padding: 4rem 0;
+    }
+
+    .coverage-locations {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coverage-locations span {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    /* ---------- IMAGENS ---------- */
+
+    .trust-image img,
+    .about-image img {
+        height: 25rem;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .booking-box {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .booking-buttons {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .booking-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer .logo img {
+        width: 12rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+}
+
+/* =========================================================
+   PÁGINA DE SERVIÇOS
+   ========================================================= */
+
+
+/* ---------- LINK ATIVO DO MENU ---------- */
+
+.nav-active {
+    color: #d58b6a !important;
+}
+
+
+/* ---------- CABEÇALHO DA PÁGINA ---------- */
+
+.services-page-hero {
+    padding: 6rem 0 5rem;
+
+    background-color: #f6f1e8;
+
+    text-align: center;
+}
+
+.services-page-intro {
+    max-width: 50rem;
+}
+
+.services-page-intro h1 {
+    color: #405346;
+
+    margin-bottom: 1.5rem;
+}
+
+.services-page-intro h1 span {
+    color: #6f896f;
+}
+
+.services-page-intro p {
+    max-width: 42rem;
+
+    margin: 0 auto;
+
+    color: #646961;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   DETALHE DOS SERVIÇOS
+   ========================================================= */
+
+.service-detail {
+    padding: 6rem 0;
+
+    background-color: #ffffff;
+}
+
+.service-detail-alt {
+    background-color: #f6f1e8;
+}
+
+.service-detail-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    align-items: center;
+
+    gap: 5rem;
+}
+
+
+/* ---------- IMAGEM ---------- */
+
+.service-detail-image img {
+    height: 32rem;
+
+    border-radius: 2rem;
+
+    background-color: #dde7d9;
+}
+
+
+/* ---------- CONTEÚDO ---------- */
+
+.service-detail-content h2 {
+    color: #405346;
+
+    margin: 1rem 0 1.5rem;
+}
+
+.service-detail-content p {
+    color: #646961;
+
+    margin-bottom: 1.2rem;
+}
+
+
+/* ---------- BENEFÍCIOS ---------- */
+
+.service-benefits {
+    display: grid;
+
+    gap: 0.8rem;
+
+    margin: 2rem 0;
+}
+
+.service-benefits li {
+    padding: 0.7rem 1rem;
+
+    border-radius: 1rem;
+
+    background-color: #eef3eb;
+
+    color: #526754;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ÁREA DOS SERVIÇOS
+   ========================================================= */
+
+.services-area {
+    padding: 5rem 0;
+
+    background-color: #ffffff;
+}
+
+.services-area-box {
+    max-width: 50rem;
+
+    padding: 4rem;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    border-radius: 2rem;
+
+    background-color: #dde7d9;
+}
+
+.services-area-box h2 {
+    color: #405346;
+
+    margin-bottom: 1rem;
+}
+
+.services-area-box p {
+    color: #646961;
+
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE DA PÁGINA DE SERVIÇOS
+   ========================================================= */
+
+@media (max-width: 60rem) {
+
+    .service-detail-container {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+    .service-detail-image img {
+        height: 27rem;
+    }
+
+}
+
+
+@media (max-width: 40rem) {
+
+    .services-page-hero {
+        padding: 4rem 0;
+    }
+
+    .service-detail {
+        padding: 4rem 0;
+    }
+
+    .service-detail-image img {
+        height: 22rem;
+    }
+
+    .services-area-box {
+        padding: 2.5rem 1.5rem;
+    }
+
+}
+
+/* =========================================================
+   PÁGINA DE MARCAÇÃO
+   ========================================================= */
+
+
+/* ---------- INTRODUÇÃO ---------- */
+
+.booking-page-hero {
+    padding: 6rem 0 4rem;
+
+    background-color: #f6f1e8;
+
+    text-align: center;
+}
+
+.booking-page-intro {
+    max-width: 52rem;
+}
+
+.booking-page-intro h1 {
+    color: #405346;
+
+    margin-bottom: 1.5rem;
+}
+
+.booking-page-intro h1 span {
+    color: #6f896f;
+}
+
+.booking-page-intro p {
+    max-width: 42rem;
+
+    margin: 0 auto;
+
+    color: #646961;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   ÁREA DO FORMULÁRIO
+   ========================================================= */
+
+.booking-form-section {
+    padding: 2rem 0 7rem;
+
+    background-color: #f6f1e8;
+}
+
+.booking-form-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(18rem, 1fr);
+
+    gap: 3rem;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.booking-form {
+    padding: 3rem;
+
+    border-radius: 2rem;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 0.8rem 2rem rgba(64, 83, 70, 0.08);
+}
+
+
+/* ---------- FIELDSET ---------- */
+
+.booking-form fieldset {
+    border: 0;
+
+    margin-bottom: 3rem;
+}
+
+.booking-form legend {
+    width: 100%;
+
+    padding-bottom: 0.8rem;
+
+    margin-bottom: 1.5rem;
+
+    border-bottom:
+        0.08rem solid #e5ded3;
+
+    color: #405346;
+
+    font-family: "Nunito", Arial, sans-serif;
+
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+
+/* ---------- GRELHA ---------- */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+
+/* ---------- LABEL ---------- */
+
+.form-group label {
+    color: #405346;
+
+    font-family: "Nunito", Arial, sans-serif;
+
+    font-weight: 700;
+}
+
+
+/* ---------- CAMPOS ---------- */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+
+    border:
+        0.1rem solid #d8d4cb;
+
+    border-radius: 0.8rem;
+
+    background-color: #fbfaf7;
+
+    color: #3d403b;
+
+    font-family: "Nunito Sans", Arial, sans-serif;
+
+    font-size: 1rem;
+
+    transition: 0.2s;
+}
+
+
+/* ---------- FOCO ---------- */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline:
+        0.15rem solid rgba(111, 137, 111, 0.25);
+
+    border-color: #6f896f;
+
+    background-color: #ffffff;
+}
+
+
+/* ---------- TEXTAREA ---------- */
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 8rem;
+}
+
+
+/* ---------- AJUDA ---------- */
+
+.form-group small {
+    color: #777c75;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   AÇÕES DO FORMULÁRIO
+   ========================================================= */
+
+.form-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+.form-actions button {
+    border: 0;
+
+    cursor: pointer;
+}
+
+.required-note {
+    margin-top: 1.5rem;
+
+    color: #878b85;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   INFORMAÇÃO LATERAL
+   ========================================================= */
+
+.booking-info {
+    position: sticky;
+
+    top: 2rem;
+
+    padding: 2.5rem;
+
+    border-radius: 2rem;
+
+    background-color: #dde7d9;
+}
+
+.booking-info h2 {
+    color: #405346;
+
+    margin-bottom: 1.5rem;
+}
+
+.booking-info > p {
+    color: #5f685f;
+
+    margin-bottom: 2.5rem;
+}
+
+
+/* ---------- ITEM ---------- */
+
+.booking-info-item {
+    display: flex;
+
+    gap: 1rem;
+
+    padding: 1.3rem 0;
+
+    border-bottom:
+        0.08rem solid rgba(64, 83, 70, 0.15);
+}
+
+.booking-info-item > span {
+    width: 2.7rem;
+    height: 2.7rem;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #ffffff;
+
+    color: #d58b6a;
+}
+
+.booking-info-item h3 {
+    color: #405346;
+
+    font-size: 1rem;
+
+    margin-bottom: 0.3rem;
+}
+
+.booking-info-item p {
+    color: #647066;
+
+    font-size: 0.9rem;
+}
+
+
+/* ---------- TAXI ---------- */
+
+.booking-info-note {
+    margin-top: 2rem;
+
+    padding: 1.3rem;
+
+    border-radius: 1rem;
+
+    background-color: #f6f1e8;
+
+    color: #405346;
+}
+
+.booking-info-note strong {
+    font-family: "Nunito", Arial, sans-serif;
+}
+
+.booking-info-note p {
+    margin-top: 0.4rem;
+
+    color: #646961;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 60rem) {
+
+    .booking-form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-info {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 40rem) {
+
+    .booking-page-hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .booking-form-section {
+        padding-bottom: 4rem;
+    }
+
+    .booking-form {
+        padding: 2rem 1.3rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-full {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .booking-info {
+        padding: 2rem 1.5rem;
+    }
+
+}
+/* =========================================================
+   PACKS ENTRE PATAS
+   ========================================================= */
+
+.packs-section {
+    padding: 7rem 0;
+
+    background-color: #f6f1e8;
+}
+
+
+/* ---------- CABEÇALHO ---------- */
+
+.packs-heading {
+    max-width: 45rem;
+
+    margin: 0 auto 4rem;
+
+    text-align: center;
+}
+
+.packs-heading h2 {
+    margin-bottom: 1rem;
+
+    color: #405346;
+}
+
+.packs-heading p {
+    color: #646961;
+}
+
+
+/* =========================================================
+   GRELHA DOS PACKS
+   ========================================================= */
+
+.packs-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 2rem;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   CARTÕES
+   ========================================================= */
+
+.pack-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 2.5rem;
+
+    border: 0.08rem solid #ded8ce;
+
+    border-radius: 1.8rem;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 0.8rem 2rem rgba(64, 83, 70, 0.08);
+}
+
+
+/* ---------- PACK DESTACADO ---------- */
+
+.pack-card-featured {
+    border: 0.12rem solid #a8b89f;
+
+    transform: translateY(-1rem);
+
+    background-color: #fdfcf9;
+}
+
+
+/* ---------- ETIQUETA ---------- */
+
+.pack-tag {
+    position: absolute;
+
+    top: -1rem;
+    right: 1.5rem;
+
+    padding: 0.45rem 1rem;
+
+    border-radius: 2rem;
+
+    background-color: #d58b6a;
+
+    color: #ffffff;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+/* ---------- NÚMERO ---------- */
+
+.pack-number {
+    display: inline-block;
+
+    margin-bottom: 1rem;
+
+    color: #d58b6a;
+
+    font-family: "Nunito", Arial, sans-serif;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+
+/* ---------- TÍTULOS ---------- */
+
+.pack-card h3 {
+    margin-bottom: 1rem;
+
+    color: #405346;
+}
+
+.pack-card-header p {
+    color: #686d67;
+}
+
+
+/* ---------- CONTEÚDO ---------- */
+
+.pack-card-content {
+    flex: 1;
+
+    margin: 2rem 0;
+}
+
+.pack-card-content h4 {
+    margin-bottom: 1rem;
+
+    color: #405346;
+
+    font-family: "Nunito", Arial, sans-serif;
+}
+
+
+/* ---------- LISTA ---------- */
+
+.pack-card-content ul {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+}
+
+.pack-card-content li {
+    position: relative;
+
+    padding-left: 1.6rem;
+
+    color: #5f655f;
+}
+
+.pack-card-content li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #6f896f;
+
+    font-weight: 800;
+}
+
+
+/* ---------- BOTÕES ---------- */
+
+.pack-card .btn {
+    width: 100%;
+
+    text-align: center;
+}
+
+.pack-card .btn-outline {
+    border: 0.1rem solid #405346;
+
+    color: #405346;
+
+    background-color: transparent;
+}
+
+.pack-card .btn-outline:hover {
+    background-color: #405346;
+
+    color: #ffffff;
+}
+
+
+/* ---------- NOTA FINAL ---------- */
+
+.packs-note {
+    max-width: 45rem;
+
+    margin: 3rem auto 0;
+
+    color: #6d716c;
+
+    text-align: center;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   PACKS - TABLET
+   ========================================================= */
+
+@media (max-width: 60rem) {
+
+    .packs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pack-card-featured {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   PACKS - TELEMÓVEL
+   ========================================================= */
+
+@media (max-width: 40rem) {
+
+    .packs-section {
+        padding: 4rem 0;
+    }
+
+    .packs-heading {
+        margin-bottom: 3rem;
+    }
+
+    .pack-card {
+        padding: 2rem 1.5rem;
+    }
+
+}
