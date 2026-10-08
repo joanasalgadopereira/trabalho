@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-PT">
 
 <head>
@@ -24,9 +25,7 @@
 <body>
 
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+    <!-- HEADER -->
 
     <header class="header">
 
@@ -101,16 +100,12 @@
 
 
 
-    <!-- =====================================================
-         CONTEÚDO PRINCIPAL
-         ===================================================== -->
+    <!-- CONTEÚDO PRINCIPAL -->
 
     <main>
 
 
-        <!-- =================================================
-             INTRODUÇÃO
-             ================================================= -->
+        <!-- INTRODUÇÃO -->
 
         <section class="booking-page-hero">
 
@@ -149,25 +144,19 @@
 
 
 
-        <!-- =================================================
-             FORMULÁRIO
-             ================================================= -->
+        <!-- FORMULÁRIO -->
 
         <section class="booking-form-section">
 
             <div class="container booking-form-layout">
 
 
-                <!-- =================================================
-                     FORMULÁRIO PRINCIPAL
-                     ================================================= -->
+                <!-- FORMULÁRIO PRINCIPAL -->
 
                 <form class="booking-form">
 
 
-                    <!-- =============================================
-                         DADOS DO TUTOR
-                         ============================================= -->
+                    <!-- DADOS DO TUTOR -->
 
                     <fieldset>
 
@@ -234,9 +223,7 @@
 
 
 
-                    <!-- =============================================
-                         DADOS DO ANIMAL
-                         ============================================= -->
+                    <!-- DADOS DO ANIMAL -->
 
                     <fieldset>
 
@@ -301,9 +288,7 @@
 
 
 
-                    <!-- =============================================
-                         SERVIÇO
-                         ============================================= -->
+                    <!-- SERVIÇO -->
 
                     <fieldset>
 
@@ -314,6 +299,8 @@
 
                         <div class="form-grid">
 
+
+                            <!-- SERVIÇO PRETENDIDO -->
 
                             <div class="form-group form-group-full">
 
@@ -358,6 +345,41 @@
                             </div>
 
 
+
+                            <!-- ADICIONAR PET TAXI -->
+
+                            <div class="taxi-extra-group form-group-full"
+                                 id="grupo_adicionar_taxi">
+
+                                <label for="adicionar_taxi"
+                                       class="taxi-extra-label">
+
+                                    <input type="checkbox"
+                                           id="adicionar_taxi"
+                                           name="incluir_taxi">
+
+                                    <span>
+                                        Adicionar Entre Patas Taxi
+                                    </span>
+
+                                </label>
+
+
+                                <small>
+
+                                    Podes acrescentar transporte
+                                    ao serviço escolhido.
+
+                                    O valor depende da distância
+                                    da deslocação.
+
+                                </small>
+
+                            </div>
+
+
+
+                            <!-- HORÁRIO DO SERVIÇO -->
 
                             <div class="form-group form-group-full">
 
@@ -414,9 +436,7 @@
 
 
 
-                    <!-- =============================================
-                         LOCALIZAÇÃO
-                         ============================================= -->
+                    <!-- LOCALIZAÇÃO DO SERVIÇO -->
 
                     <fieldset>
 
@@ -427,6 +447,8 @@
 
                         <div class="form-grid">
 
+
+                            <!-- DISTRITO -->
 
                             <div class="form-group">
 
@@ -456,6 +478,8 @@
 
 
 
+                            <!-- MORADA -->
+
                             <div class="form-group">
 
                                 <label for="morada_servico">
@@ -472,24 +496,101 @@
                             </div>
 
 
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- DADOS DO PET TAXI -->
+
+                    <fieldset id="grupo_dados_taxi">
+
+                        <legend>
+                            Entre Patas Taxi
+                        </legend>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- ORIGEM -->
+
+                            <div class="form-group form-group-full">
+
+                                <label for="origem_taxi">
+                                    Origem do Taxi *
+                                </label>
+
+                                <input type="text"
+                                       id="origem_taxi"
+                                       name="origem_taxi"
+                                       maxlength="255"
+                                       placeholder="Indica o local de recolha">
+
+                            </div>
+
+
+
+                            <!-- DESTINO -->
 
                             <div class="form-group form-group-full">
 
                                 <label for="destino_taxi">
-                                    Destino do Entre Patas Taxi
+                                    Destino do Taxi *
                                 </label>
 
                                 <input type="text"
                                        id="destino_taxi"
                                        name="destino_taxi"
                                        maxlength="255"
-                                       placeholder="Preencher apenas se escolheres Entre Patas Taxi">
+                                       placeholder="Indica o destino">
 
+                            </div>
+
+
+
+                            <!-- DATA -->
+
+                            <div class="form-group">
+
+                                <label for="data_taxi">
+                                    Data do Taxi *
+                                </label>
+
+                                <input type="date"
+                                       id="data_taxi"
+                                       name="data_taxi">
+
+                            </div>
+
+
+
+                            <!-- HORA -->
+
+                            <div class="form-group">
+
+                                <label for="hora_taxi">
+                                    Hora do Taxi *
+                                </label>
+
+                                <input type="time"
+                                       id="hora_taxi"
+                                       name="hora_taxi">
+
+                            </div>
+
+
+
+                            <!-- INFORMAÇÃO -->
+
+                            <div class="form-group form-group-full">
 
                                 <small>
 
                                     O valor do Entre Patas Taxi
-                                    depende da distância da deslocação.
+                                    é calculado de acordo com
+                                    a distância da deslocação.
 
                                 </small>
 
@@ -502,9 +603,7 @@
 
 
 
-                    <!-- =============================================
-                         INFORMAÇÕES ADICIONAIS
-                         ============================================= -->
+                    <!-- INFORMAÇÕES ADICIONAIS -->
 
                     <fieldset>
 
@@ -530,19 +629,12 @@
 
 
 
-                    <!-- =============================================
-                         BOTÕES
-                         ============================================= -->
+                    <!-- BOTÕES -->
 
                     <div class="form-actions">
 
 
-                        <!--
-                            TEMPORARIAMENTE TYPE="BUTTON".
-
-                            Quando tivermos JavaScript + backend,
-                            volta para type="submit".
-                        -->
+                        <!-- O ENVIO REAL SERÁ IMPLEMENTADO MAIS TARDE -->
 
                         <button type="button"
                                 class="btn btn-primary">
@@ -573,9 +665,7 @@
 
 
 
-                <!-- =================================================
-                     INFORMAÇÃO LATERAL
-                     ================================================= -->
+                <!-- INFORMAÇÃO LATERAL -->
 
                 <aside class="booking-info">
 
@@ -690,7 +780,7 @@
 
 
 
-                    <!-- TAXI -->
+                    <!-- PET TAXI -->
 
                     <div class="booking-info-note">
 
@@ -701,8 +791,16 @@
 
                         <p>
 
-                            O preço é calculado posteriormente
-                            de acordo com a distância necessária.
+                            Podes utilizar o Entre Patas Taxi
+                            como serviço individual ou acrescentá-lo
+                            a outro serviço ou pack.
+
+                        </p>
+
+                        <p>
+
+                            Indica a origem, destino, data e hora
+                            necessárias para o transporte.
 
                         </p>
 
@@ -721,9 +819,7 @@
 
 
 
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
+    <!-- FOOTER -->
 
     <footer class="footer"
             id="contacto">
@@ -888,6 +984,12 @@
         </div>
 
     </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="trabalho.js"></script>
 
 
 </body>

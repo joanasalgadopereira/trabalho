@@ -1,53 +1,28 @@
-/* =========================================================
-   ENTRE PATAS
-   Base de Dados - testes.sql
-   ========================================================= */
+
+/* ENTRE PATAS - TESTES DA BASE DE DADOS */
 
 
-/* =========================================================
-   1. SELECIONAR A BASE DE DADOS
-   ========================================================= */
+/* SELECIONAR A BASE DE DADOS */
 
 USE entre_patas;
 
 
-
-/* =========================================================
-   2. LIMPAR RESERVAS DE TESTES ANTERIORES
-   ========================================================= */
-
-/*
-   Apaga todas as reservas de teste
-   e reinicia o AUTO_INCREMENT.
-*/
+/* LIMPAR RESERVAS DE TESTES ANTERIORES */
 
 TRUNCATE TABLE reservas;
 
 
-
-/* =========================================================
-   3. VERIFICAR OS SERVICOS
-   ========================================================= */
+/* VERIFICAR OS SERVIÇOS */
 
 SELECT * FROM servicos;
 
 
-
-/* =========================================================
-   4. VERIFICAR OS HORARIOS
-   ========================================================= */
+/* VERIFICAR OS HORÁRIOS */
 
 SELECT * FROM horarios;
 
 
-
-/* =========================================================
-   5. TESTE INSERT
-   CRIAR RESERVAS VALIDAS
-   ========================================================= */
-
-
-/* ---------- RESERVA 1 ---------- */
+/* CRIAR RESERVA 1 */
 
 INSERT INTO reservas
 (
@@ -60,7 +35,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -75,14 +54,17 @@ VALUES
     'Cão',
     'Braga',
     'Vila Nova de Famalicão',
+    FALSE,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     'Animal sociável e habituado a visitas.',
     'pendente'
 );
 
 
-
-/* ---------- RESERVA 2 ---------- */
+/* CRIAR RESERVA 2 */
 
 INSERT INTO reservas
 (
@@ -95,7 +77,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -110,14 +96,17 @@ VALUES
     'Cão',
     'Porto',
     'Maia',
+    FALSE,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     'Passeio adaptado a um cão jovem e energético.',
     'confirmada'
 );
 
 
-
-/* ---------- RESERVA 3 ---------- */
+/* CRIAR RESERVA 3 */
 
 INSERT INTO reservas
 (
@@ -130,7 +119,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -145,14 +138,17 @@ VALUES
     'Gato',
     'Braga',
     'Guimarães',
+    FALSE,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     'Gata tranquila. Manter a rotina habitual de alimentação.',
     'pendente'
 );
 
 
-
-/* ---------- RESERVA 4 ---------- */
+/* CRIAR RESERVA 4 COM TAXI COMO EXTRA */
 
 INSERT INTO reservas
 (
@@ -165,7 +161,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -180,14 +180,17 @@ VALUES
     'Cão',
     'Porto',
     'Vila Nova de Gaia',
-    NULL,
-    'Banho incluído no Pack Entre Patas Conforto.',
+    TRUE,
+    'Vila Nova de Gaia',
+    'Clínica Veterinária de Gaia',
+    '2026-09-15',
+    '19:00:00',
+    'Pack Entre Patas Conforto com Entre Patas Taxi como extra.',
     'confirmada'
 );
 
 
-
-/* ---------- RESERVA 5 - ENTRE PATAS TAXI ---------- */
+/* CRIAR RESERVA 5 COM TAXI COMO SERVIÇO PRINCIPAL */
 
 INSERT INTO reservas
 (
@@ -200,7 +203,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -215,47 +222,38 @@ VALUES
     'Gato',
     'Braga',
     'Braga',
+    FALSE,
+    'Braga',
     'Clínica Veterinária',
+    '2026-09-15',
+    '18:30:00',
     'Transporte para consulta veterinária.',
     'pendente'
 );
 
 
-
-/* =========================================================
-   6. TESTE SELECT
-   CONSULTAR TODAS AS RESERVAS
-   ========================================================= */
+/* CONSULTAR TODAS AS RESERVAS */
 
 SELECT * FROM reservas;
 
 
-
-/* =========================================================
-   7. TESTE JOIN
-   RESERVAS + SERVICOS + HORARIOS
-   ========================================================= */
+/* CONSULTAR RESERVAS COM SERVIÇO E HORÁRIO */
 
 SELECT
-
     r.id_reserva,
-
     r.nome_tutor,
-
     r.nome_animal,
-
     r.especie,
-
     s.nome AS servico,
-
+    r.incluir_taxi,
+    r.origem_taxi,
+    r.destino_taxi,
+    r.data_taxi,
+    r.hora_taxi,
     h.data,
-
     h.hora_inicio,
-
     h.hora_fim,
-
     r.distrito,
-
     r.estado
 
 FROM reservas AS r
@@ -271,66 +269,82 @@ ORDER BY
     h.hora_inicio;
 
 
-
-/* =========================================================
-   8. CONSULTAR UMA RESERVA ESPECIFICA
-   ========================================================= */
+/* CONSULTAR UMA RESERVA ESPECÍFICA */
 
 SELECT *
 FROM reservas
 WHERE id_reserva = 1;
 
 
-
-/* =========================================================
-   9. FILTRAR RESERVAS POR ESTADO
-   ========================================================= */
+/* FILTRAR RESERVAS PENDENTES */
 
 SELECT *
 FROM reservas
 WHERE estado = 'pendente';
 
 
-
-/* =========================================================
-   10. FILTRAR RESERVAS POR DISTRITO
-   ========================================================= */
+/* FILTRAR RESERVAS DO DISTRITO DE BRAGA */
 
 SELECT *
 FROM reservas
 WHERE distrito = 'Braga';
 
 
+/* CONSULTAR RESERVAS COM TAXI COMO EXTRA */
 
-/* =========================================================
-   11. TESTE UPDATE
-   ALTERAR ESTADO DE UMA RESERVA
-   ========================================================= */
+SELECT
+    id_reserva,
+    nome_tutor,
+    nome_animal,
+    id_servico,
+    incluir_taxi,
+    origem_taxi,
+    destino_taxi,
+    data_taxi,
+    hora_taxi
+
+FROM reservas
+
+WHERE incluir_taxi = TRUE;
+
+
+/* CONSULTAR TAXI COMO SERVIÇO PRINCIPAL */
+
+SELECT
+    id_reserva,
+    nome_tutor,
+    nome_animal,
+    id_servico,
+    incluir_taxi,
+    origem_taxi,
+    destino_taxi,
+    data_taxi,
+    hora_taxi
+
+FROM reservas
+
+WHERE id_servico = 6;
+
+
+/* ALTERAR O ESTADO DE UMA RESERVA */
 
 UPDATE reservas
 
 SET
     estado = 'confirmada',
-
-    observacoes =
-    'Animal sociável. Reserva confirmada com o tutor.'
+    observacoes = 'Animal sociável. Reserva confirmada com o tutor.'
 
 WHERE id_reserva = 1;
 
 
-
-/* Confirmar alteração */
+/* CONFIRMAR A ALTERAÇÃO */
 
 SELECT *
 FROM reservas
 WHERE id_reserva = 1;
 
 
-
-/* =========================================================
-   12. TESTE UPDATE
-   ALTERAR TELEFONE DO TUTOR
-   ========================================================= */
+/* ALTERAR O TELEFONE DO TUTOR */
 
 UPDATE reservas
 
@@ -340,48 +354,92 @@ SET
 WHERE id_reserva = 2;
 
 
-
-/* Confirmar alteração */
+/* CONFIRMAR A ALTERAÇÃO */
 
 SELECT *
 FROM reservas
 WHERE id_reserva = 2;
 
 
+/* ADICIONAR TAXI A UMA RESERVA */
 
-/* =========================================================
-   13. TESTE DELETE
-   CANCELAR / ELIMINAR UMA RESERVA
-   ========================================================= */
+UPDATE reservas
 
-/*
-   Neste modelo inicial, cancelar uma reserva
-   significa eliminar o registo.
-*/
+SET
+    incluir_taxi = TRUE,
+    origem_taxi = 'Guimarães',
+    destino_taxi = 'Hospital Veterinário',
+    data_taxi = '2026-09-16',
+    hora_taxi = '15:30:00'
+
+WHERE id_reserva = 3;
+
+
+/* CONFIRMAR A ADIÇÃO DO TAXI */
+
+SELECT
+    id_reserva,
+    nome_tutor,
+    nome_animal,
+    incluir_taxi,
+    origem_taxi,
+    destino_taxi,
+    data_taxi,
+    hora_taxi
+
+FROM reservas
+
+WHERE id_reserva = 3;
+
+
+/* RETIRAR O TAXI DA RESERVA */
+
+UPDATE reservas
+
+SET
+    incluir_taxi = FALSE,
+    origem_taxi = NULL,
+    destino_taxi = NULL,
+    data_taxi = NULL,
+    hora_taxi = NULL
+
+WHERE id_reserva = 3;
+
+
+/* CONFIRMAR A REMOÇÃO DO TAXI */
+
+SELECT
+    id_reserva,
+    nome_tutor,
+    nome_animal,
+    incluir_taxi,
+    origem_taxi,
+    destino_taxi,
+    data_taxi,
+    hora_taxi
+
+FROM reservas
+
+WHERE id_reserva = 3;
+
+
+/* ELIMINAR UMA RESERVA */
 
 DELETE FROM reservas
 WHERE id_reserva = 5;
 
 
-
-/* Confirmar eliminação */
+/* CONFIRMAR A ELIMINAÇÃO */
 
 SELECT * FROM reservas;
 
 
-
-/* =========================================================
-   14. VERIFICAR HORARIOS LIVRES
-   ========================================================= */
+/* VERIFICAR HORÁRIOS LIVRES */
 
 SELECT
-
     h.id_horario,
-
     h.data,
-
     h.hora_inicio,
-
     h.hora_fim
 
 FROM horarios AS h
@@ -396,20 +454,12 @@ ORDER BY
     h.hora_inicio;
 
 
-
-/* =========================================================
-   15. MOSTRAR TODOS OS HORARIOS
-   COM ESTADO DE OCUPACAO
-   ========================================================= */
+/* MOSTRAR A DISPONIBILIDADE DOS HORÁRIOS */
 
 SELECT
-
     h.id_horario,
-
     h.data,
-
     h.hora_inicio,
-
     h.hora_fim,
 
     CASE
@@ -431,29 +481,16 @@ ORDER BY
     h.hora_inicio;
 
 
-
-/* =========================================================
-   TESTES DE ERRO
-   ========================================================= */
+/* TESTES DE ERRO */
 
 /*
-   ATENÇÃO:
+OS TESTES SEGUINTES DEVEM DAR ERRO.
 
-   Os testes seguintes estão comentados porque
-   DEVEM dar erro.
-
-   Testa-os individualmente.
-
-   Não os executes todos juntamente com o resto
-   do ficheiro.
+DEVEM SER EXECUTADOS INDIVIDUALMENTE.
 */
 
 
-
-/* =========================================================
-   16. TESTE DE ERRO
-   DUPLA RESERVA DO MESMO HORARIO
-   ========================================================= */
+/* TESTAR DUPLA RESERVA DO MESMO HORÁRIO */
 
 /*
 
@@ -468,7 +505,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -483,6 +524,10 @@ VALUES
     'Cão',
     'Porto',
     'Porto',
+    FALSE,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     NULL,
     'pendente'
@@ -490,25 +535,8 @@ VALUES
 
 */
 
-/*
-   RESULTADO ESPERADO:
 
-   O MySQL deve recusar a operação.
-
-   O horário 1 já está associado
-   à reserva 1.
-
-   Isto testa a restrição:
-
-   UNIQUE (id_horario)
-*/
-
-
-
-/* =========================================================
-   17. TESTE DE ERRO
-   SERVICO INEXISTENTE
-   ========================================================= */
+/* TESTAR SERVIÇO INEXISTENTE */
 
 /*
 
@@ -523,7 +551,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -538,6 +570,10 @@ VALUES
     'Cão',
     'Braga',
     'Braga',
+    FALSE,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     NULL,
     'pendente'
@@ -545,21 +581,8 @@ VALUES
 
 */
 
-/*
-   RESULTADO ESPERADO:
 
-   Deve dar erro porque não existe
-   nenhum serviço com id_servico = 999.
-
-   Isto testa a FOREIGN KEY.
-*/
-
-
-
-/* =========================================================
-   18. TESTE DE ERRO
-   HORARIO INEXISTENTE
-   ========================================================= */
+/* TESTAR HORÁRIO INEXISTENTE */
 
 /*
 
@@ -574,7 +597,11 @@ INSERT INTO reservas
     especie,
     distrito,
     morada_servico,
+    incluir_taxi,
+    origem_taxi,
     destino_taxi,
+    data_taxi,
+    hora_taxi,
     observacoes,
     estado
 )
@@ -589,6 +616,10 @@ VALUES
     'Gato',
     'Porto',
     'Porto',
+    FALSE,
+    NULL,
+    NULL,
+    NULL,
     NULL,
     NULL,
     'pendente'
@@ -596,21 +627,8 @@ VALUES
 
 */
 
-/*
-   RESULTADO ESPERADO:
 
-   Deve dar erro porque não existe
-   nenhum horário com id_horario = 999.
-
-   Isto testa a FOREIGN KEY.
-*/
-
-
-
-/* =========================================================
-   19. TESTE DE ERRO
-   HORARIO INVALIDO
-   ========================================================= */
+/* TESTAR HORÁRIO INVÁLIDO */
 
 /*
 
@@ -631,22 +649,8 @@ VALUES
 
 */
 
-/*
-   RESULTADO ESPERADO:
 
-   Deve dar erro porque a hora de fim
-   é anterior à hora de início.
-
-   Isto testa a restrição:
-
-   CHECK (hora_fim > hora_inicio)
-*/
-
-
-
-/* =========================================================
-   20. ESTADO FINAL DOS DADOS
-   ========================================================= */
+/* VERIFICAR O ESTADO FINAL DOS DADOS */
 
 SELECT * FROM servicos;
 

@@ -94,11 +94,13 @@ CREATE TABLE reservas (
         'Porto'
     ) NOT NULL,
 
-    morada_servico VARCHAR(255) NOT NULL,
-
-    destino_taxi VARCHAR(255) NULL,
-
-    observacoes TEXT NULL,
+morada_servico VARCHAR(255) NOT NULL,
+incluir_taxi BOOLEAN NOT NULL DEFAULT FALSE,
+origem_taxi VARCHAR(255) NULL,
+destino_taxi VARCHAR(255) NULL,
+data_taxi DATE NULL,
+hora_taxi TIME NULL,
+observacoes TEXT NULL,
 
     estado ENUM(
         'pendente',
