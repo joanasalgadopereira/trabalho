@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Área de Administração | Entre Patas
+    </title>
+
+    <link rel="stylesheet"
+          href="trabalho.css">
+
+</head>
+
+
+<body>
+
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+
+            <!-- LOGÓTIPO -->
+
+            <a href="trabalho.html"
+               class="login-logo">
+
+                <img src="imagens_final/logo.png"
+                     alt="Entre Patas">
+
+            </a>
+
+
+
+            <!-- CABEÇALHO -->
+
+            <div class="login-header">
+
+                <p class="section-label">
+                    Administração
+                </p>
+
+                <h1>
+                    Iniciar sessão
+                </h1>
+
+                <p>
+                    Acede à área de gestão das reservas.
+                </p>
+
+            </div>
+
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="form_login"
+                  class="login-form">
+
+
+                <!-- UTILIZADOR -->
+
+                <div class="form-group">
+
+                    <label for="utilizador">
+                        Utilizador
+                    </label>
+
+                    <input type="text"
+                           id="utilizador"
+                           name="utilizador"
+                           autocomplete="username"
+                           required>
+
+                </div>
+
+
+
+                <!-- PALAVRA-PASSE -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Palavra-passe
+                    </label>
+
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           autocomplete="current-password"
+                           required>
+
+
+                    <div class="mostrar-password">
+
+                        <input type="checkbox"
+                               id="mostrar_password">
+
+                        <label for="mostrar_password">
+                            Mostrar palavra-passe
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MENSAGEM -->
+
+                <p id="mensagem_login"
+                   class="mensagem-login">
+                </p>
+
+
+
+                <!-- ENTRAR -->
+
+                <button type="submit"
+                        class="btn btn-primary">
+
+                    Entrar
+
+                </button>
+
+
+
+                <!-- VOLTAR AO SITE -->
+
+                <a href="trabalho.html"
+                   class="btn btn-secondary">
+
+                    ← Voltar ao site
+
+                </a>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>

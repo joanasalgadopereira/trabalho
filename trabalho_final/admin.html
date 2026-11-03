@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Área Administrativa | Entre Patas
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="trabalho.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="admin-page">
+
+        <section class="admin-panel">
+
+
+            <p class="section-label">
+                Área reservada
+            </p>
+
+
+            <h1>
+                Gestão Entre Patas
+            </h1>
+
+
+            <p class="admin-intro">
+                Escolhe a área que pretendes gerir.
+            </p>
+
+
+
+            <div class="admin-opcoes">
+
+
+                <!-- RESERVAS -->
+
+                <a
+                    href="reservas.html"
+                    class="admin-opcao"
+                >
+
+                    <h2>
+                        Reservas
+                    </h2>
+
+                    <p>
+                        Consulta e gere as marcações
+                        dos clientes.
+                    </p>
+
+                    <span>
+                        Gerir reservas →
+                    </span>
+
+                </a>
+
+
+
+                <!-- HORÁRIOS -->
+
+                <a
+                    href="horarios.html"
+                    class="admin-opcao"
+                >
+
+                    <h2>
+                        Horários
+                    </h2>
+
+                    <p>
+                        Cria e gere os horários
+                        disponíveis para marcação.
+                    </p>
+
+                    <span>
+                        Gerir horários →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- VOLTAR AO SITE -->
+
+            <a
+                href="trabalho.html"
+                class="btn btn-primary"
+            >
+                ← Voltar ao site
+            </a>
+
+
+
+            <!-- TERMINAR SESSÃO -->
+
+            <button
+                type="button"
+                id="terminar_sessao"
+                class="btn btn-secondary"
+            >
+                Terminar sessão
+            </button>
+
+
+        </section>
+
+    </main>
+
+
+
+    <script>
+
+
+        // PROCURAR O TOKEN DO ADMIN
+
+        const tokenAdmin =
+            localStorage.getItem(
+                "token_admin"
+            );
+
+
+        // VERIFICAR A SESSÃO
+
+        if (!tokenAdmin) {
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+        // SELECIONAR O BOTÃO DE TERMINAR SESSÃO
+
+        const botaoTerminarSessao =
+            document.querySelector(
+                "#terminar_sessao"
+            );
+
+
+        // TERMINAR SESSÃO
+
+        botaoTerminarSessao.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "token_admin"
+                );
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

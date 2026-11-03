@@ -10,7 +10,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Marca um serviço de pet sitting, passeio, pet taxi ou pack Entre Patas nos distritos de Braga e Porto.">
+          content="Marca um serviço de pet sitting, passeio, Entre Patas Taxi ou pack em Santo Tirso, Vila Nova de Famalicão, Trofa e Guimarães.">
 
     <title>
         Marcar serviço | Entre Patas
@@ -85,8 +85,6 @@
             </nav>
 
 
-            <!-- BOTÃO PRINCIPAL -->
-
             <a href="marcacao.html"
                class="btn btn-primary">
 
@@ -129,12 +127,24 @@
 
                 <p>
 
-                    Preenche os dados abaixo para preparar
+                    Preenche os dados abaixo para enviar
                     o teu pedido de marcação.
 
-                    Mais tarde, quando o sistema estiver ligado
-                    à base de dados, será possível enviar
-                    a marcação diretamente.
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Importante:
+                    </strong>
+
+                    o envio deste formulário corresponde
+                    apenas a um pedido de reserva.
+
+                    A marcação só fica efetivamente confirmada
+                    depois de receberes uma resposta da
+                    Entre Patas por email ou mensagem.
 
                 </p>
 
@@ -151,9 +161,8 @@
             <div class="container booking-form-layout">
 
 
-                <!-- FORMULÁRIO PRINCIPAL -->
-
-                <form class="booking-form">
+                <form class="booking-form"
+                      id="form_reserva">
 
 
                     <!-- DADOS DO TUTOR -->
@@ -213,6 +222,12 @@
                                        maxlength="150"
                                        placeholder="Ex.: nome@email.pt"
                                        required>
+
+                                <small>
+                                    Este email poderá ser utilizado
+                                    para responder ao teu pedido
+                                    de reserva.
+                                </small>
 
                             </div>
 
@@ -282,6 +297,30 @@
                             </div>
 
 
+
+                            <!-- OUTRA ESPÉCIE -->
+
+                            <div class="form-group form-group-full"
+                                 id="grupo_outra_especie"
+                                 style="display: none;">
+
+                                <label for="outra_especie">
+                                    Qual é a espécie? *
+                                </label>
+
+                                <input type="text"
+                                       id="outra_especie"
+                                       name="outra_especie"
+                                       maxlength="100"
+                                       placeholder="Ex.: Coelho, ave, porquinho-da-índia...">
+
+                                <small>
+                                    Indica a espécie do teu animal.
+                                </small>
+
+                            </div>
+
+
                         </div>
 
                     </fieldset>
@@ -300,8 +339,6 @@
                         <div class="form-grid">
 
 
-                            <!-- SERVIÇO PRETENDIDO -->
-
                             <div class="form-group form-group-full">
 
                                 <label for="id_servico">
@@ -317,27 +354,27 @@
                                     </option>
 
                                     <option value="1">
-                                        Pet Sitting
+                                        Pet Sitting — 8 € / hora
                                     </option>
 
                                     <option value="2">
-                                        Passeios
+                                        Passeios — desde 6 €
                                     </option>
 
                                     <option value="3">
-                                        Entre Patas Essencial
+                                        Entre Patas Essencial — até 6 h — 45 €
                                     </option>
 
                                     <option value="4">
-                                        Entre Patas Conforto
+                                        Entre Patas Conforto — até 8 h — 58 €
                                     </option>
 
                                     <option value="5">
-                                        Entre Patas Completo
+                                        Entre Patas Completo — até 10 h — 70 €
                                     </option>
 
                                     <option value="6">
-                                        Entre Patas Taxi
+                                        Entre Patas Taxi — valor mediante distância
                                     </option>
 
                                 </select>
@@ -346,7 +383,90 @@
 
 
 
-                            <!-- ADICIONAR PET TAXI -->
+                            <!-- PREÇOS -->
+
+                            <div class="form-group form-group-full">
+
+                                <small>
+
+                                    <strong>
+                                        Pet Sitting:
+                                    </strong>
+
+                                    8 € por hora.
+
+                                    Em períodos prolongados,
+                                    o valor por hora poderá ser ajustado
+                                    mediante acordo e confirmação prévia.
+
+                                </small>
+
+                                <br>
+
+                                <small>
+
+                                    <strong>
+                                        Passeios:
+                                    </strong>
+
+                                    30 minutos — 6 € |
+                                    60 minutos — 10 €.
+
+                                </small>
+
+                                <br>
+
+                                <small>
+
+                                    <strong>
+                                        Packs:
+                                    </strong>
+
+                                    todos incluem acompanhamento,
+                                    alimentação e água,
+                                    manutenção da rotina,
+                                    passeio e atualizações ao tutor.
+
+                                    Essencial até 6 horas — 45 € |
+                                    Conforto até 8 horas — 58 € |
+                                    Completo até 10 horas — 70 €.
+
+                                </small>
+
+                                <br>
+
+                                <small>
+
+                                    <strong>
+                                        Entre Patas Taxi:
+                                    </strong>
+
+                                    valor calculado de acordo
+                                    com a distância.
+
+                                </small>
+
+                            </div>
+
+
+
+                            <!-- ESTIMATIVA DO PREÇO -->
+
+                            <div class="form-group form-group-full"
+                                 id="grupo_estimativa_preco">
+
+                                <p id="estimativa_preco">
+
+                                    Seleciona o serviço e o horário
+                                    para veres a estimativa do valor.
+
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- ADICIONAR ENTRE PATAS TAXI -->
 
                             <div class="taxi-extra-group form-group-full"
                                  id="grupo_adicionar_taxi">
@@ -379,12 +499,12 @@
 
 
 
-                            <!-- HORÁRIO DO SERVIÇO -->
+                            <!-- DATA E HORÁRIO -->
 
                             <div class="form-group form-group-full">
 
                                 <label for="id_horario">
-                                    Horário pretendido *
+                                    Dia disponível *
                                 </label>
 
                                 <select id="id_horario"
@@ -392,38 +512,66 @@
                                         required>
 
                                     <option value="">
-                                        Seleciona um horário
-                                    </option>
-
-                                    <option value="1">
-                                        15/09/2026 — 08:00 às 10:00
-                                    </option>
-
-                                    <option value="2">
-                                        15/09/2026 — 10:00 às 12:00
-                                    </option>
-
-                                    <option value="3">
-                                        15/09/2026 — 14:00 às 16:00
-                                    </option>
-
-                                    <option value="4">
-                                        15/09/2026 — 16:00 às 18:00
-                                    </option>
-
-                                    <option value="5">
-                                        15/09/2026 — 18:00 às 21:00
+                                        Seleciona um dia
                                     </option>
 
                                 </select>
 
+                                <small>
+                                    Seleciona uma das disponibilidades existentes.
+                                </small>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="hora_inicio">
+                                    Hora de início *
+                                </label>
+
+                                <input type="time"
+                                       id="hora_inicio"
+                                       name="hora_inicio"
+                                       required>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="hora_fim">
+                                    Hora de fim *
+                                </label>
+
+                                <input type="time"
+                                       id="hora_fim"
+                                       name="hora_fim"
+                                       required>
+
+                            </div>
+
+
+
+                            <div class="form-group form-group-full">
 
                                 <small>
 
-                                    Estes horários são demonstrativos.
+                                    <strong>
+                                        Packs Entre Patas:
+                                    </strong>
 
-                                    Mais tarde serão carregados
-                                    automaticamente da base de dados.
+                                    escolhe o período de acompanhamento
+                                    de acordo com a duração máxima
+                                    do pack selecionado.
+
+                                    Todos os packs incluem passeio.
+
+                                    Necessidades superiores à duração
+                                    indicada poderão ser avaliadas
+                                    mediante disponibilidade e orçamento.
 
                                 </small>
 
@@ -436,7 +584,7 @@
 
 
 
-                    <!-- LOCALIZAÇÃO DO SERVIÇO -->
+                    <!-- LOCALIZAÇÃO -->
 
                     <fieldset>
 
@@ -448,28 +596,34 @@
                         <div class="form-grid">
 
 
-                            <!-- DISTRITO -->
-
                             <div class="form-group">
 
-                                <label for="distrito">
-                                    Distrito *
+                                <label for="concelho">
+                                    Concelho *
                                 </label>
 
-                                <select id="distrito"
-                                        name="distrito"
+                                <select id="concelho"
+                                        name="concelho"
                                         required>
 
                                     <option value="">
-                                        Seleciona o distrito
+                                        Seleciona o concelho
                                     </option>
 
-                                    <option value="Braga">
-                                        Braga
+                                    <option value="Santo Tirso">
+                                        Santo Tirso
                                     </option>
 
-                                    <option value="Porto">
-                                        Porto
+                                    <option value="Vila Nova de Famalicão">
+                                        Vila Nova de Famalicão
+                                    </option>
+
+                                    <option value="Trofa">
+                                        Trofa
+                                    </option>
+
+                                    <option value="Guimarães">
+                                        Guimarães
                                     </option>
 
                                 </select>
@@ -478,9 +632,27 @@
 
 
 
-                            <!-- MORADA -->
-
                             <div class="form-group">
+
+                                <label for="codigo_postal">
+                                    Código postal *
+                                </label>
+
+                                <input type="text"
+                                       id="codigo_postal"
+                                       name="codigo_postal"
+                                       maxlength="8"
+                                       inputmode="numeric"
+                                       pattern="[0-9]{4}-[0-9]{3}"
+                                       placeholder="Ex.: 4760-000"
+                                       title="Introduz o código postal no formato 0000-000"
+                                       required>
+
+                            </div>
+
+
+
+                            <div class="form-group form-group-full">
 
                                 <label for="morada_servico">
                                     Local / Morada *
@@ -490,8 +662,38 @@
                                        id="morada_servico"
                                        name="morada_servico"
                                        maxlength="255"
-                                       placeholder="Ex.: Guimarães"
+                                       placeholder="Ex.: Rua..., nº..."
                                        required>
+
+                            </div>
+
+
+
+                            <div class="form-group form-group-full">
+
+                                <small>
+
+                                    Os serviços estão disponíveis
+                                    principalmente nos concelhos
+                                    de Santo Tirso,
+                                    Vila Nova de Famalicão,
+                                    Trofa e Guimarães.
+
+                                </small>
+
+                                <br>
+
+                                <small>
+
+                                    Se precisas do serviço noutro
+                                    concelho próximo, entra primeiro
+                                    em contacto através de
+
+                                    <a href="mailto:entrepatas.servicos@gmail.com">
+                                        entrepatas.servicos@gmail.com
+                                    </a>.
+
+                                </small>
 
                             </div>
 
@@ -502,7 +704,7 @@
 
 
 
-                    <!-- DADOS DO PET TAXI -->
+                    <!-- ENTRE PATAS TAXI -->
 
                     <fieldset id="grupo_dados_taxi">
 
@@ -513,8 +715,6 @@
 
                         <div class="form-grid">
 
-
-                            <!-- ORIGEM -->
 
                             <div class="form-group form-group-full">
 
@@ -532,8 +732,6 @@
 
 
 
-                            <!-- DESTINO -->
-
                             <div class="form-group form-group-full">
 
                                 <label for="destino_taxi">
@@ -550,8 +748,6 @@
 
 
 
-                            <!-- DATA -->
-
                             <div class="form-group">
 
                                 <label for="data_taxi">
@@ -565,8 +761,6 @@
                             </div>
 
 
-
-                            <!-- HORA -->
 
                             <div class="form-group">
 
@@ -582,15 +776,14 @@
 
 
 
-                            <!-- INFORMAÇÃO -->
-
                             <div class="form-group form-group-full">
 
                                 <small>
 
                                     O valor do Entre Patas Taxi
                                     é calculado de acordo com
-                                    a distância da deslocação.
+                                    a distância da deslocação
+                                    e confirmado posteriormente.
 
                                 </small>
 
@@ -629,17 +822,84 @@
 
 
 
+                    <!-- CONFIRMAÇÃO -->
+
+                    <div class="booking-info-note">
+
+                        <strong>
+                            Pedido de reserva
+                        </strong>
+
+                        <p>
+
+                            Ao enviares este formulário estás
+                            a fazer um pedido de marcação.
+
+                        </p>
+
+                        <p>
+
+                            <strong>
+                                A reserva ainda não fica confirmada.
+                            </strong>
+
+                            A confirmação acontece apenas depois
+                            de receberes uma resposta da Entre Patas
+                            por email ou mensagem.
+
+                        </p>
+
+                        <p>
+
+                            Caso seja necessário ajustar algum detalhe,
+                            duração ou valor, isso será combinado
+                            contigo antes da confirmação.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- DÚVIDAS -->
+
+                    <div class="booking-info-note">
+
+                        <strong>
+                            Tens alguma dúvida?
+                        </strong>
+
+                        <p>
+
+                            Se tiveres dúvidas sobre os serviços,
+                            preços, disponibilidade ou necessidades
+                            específicas do teu animal, podes contactar
+                            antes de fazeres o pedido.
+
+                        </p>
+
+                        <p>
+
+                            Email:
+
+                            <a href="mailto:entrepatas.servicos@gmail.com">
+                                entrepatas.servicos@gmail.com
+                            </a>
+
+                        </p>
+
+                    </div>
+
+
+
                     <!-- BOTÕES -->
 
                     <div class="form-actions">
 
-
-                        <!-- O ENVIO REAL SERÁ IMPLEMENTADO MAIS TARDE -->
-
-                        <button type="button"
+                        <button type="submit"
                                 class="btn btn-primary">
 
-                            Pedir marcação
+                            Enviar pedido de marcação
 
                         </button>
 
@@ -651,9 +911,7 @@
 
                         </a>
 
-
                     </div>
-
 
 
                     <p class="required-note">
@@ -691,7 +949,33 @@
 
 
 
-                    <!-- ATUALIZAÇÕES -->
+                    <div class="booking-info-item">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Confirmação da reserva
+                            </h3>
+
+                            <p>
+
+                                O envio do pedido não confirma
+                                automaticamente a marcação.
+
+                                A reserva só fica confirmada
+                                depois da resposta da Entre Patas.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
 
                     <div class="booking-info-item">
 
@@ -699,13 +983,11 @@
                             ♡
                         </span>
 
-
                         <div>
 
                             <h3>
                                 Atualizações incluídas
                             </h3>
-
 
                             <p>
 
@@ -721,26 +1003,24 @@
 
 
 
-                    <!-- LOCALIZAÇÃO -->
-
                     <div class="booking-info-item">
 
                         <span>
                             📍
                         </span>
 
-
                         <div>
 
                             <h3>
-                                Braga e Porto
+                                Área de atuação
                             </h3>
-
 
                             <p>
 
                                 Os serviços estão disponíveis
-                                nos distritos de Braga e Porto.
+                                principalmente em Santo Tirso,
+                                Vila Nova de Famalicão,
+                                Trofa e Guimarães.
 
                             </p>
 
@@ -750,21 +1030,17 @@
 
 
 
-                    <!-- PERSONALIZAÇÃO -->
-
                     <div class="booking-info-item">
 
                         <span>
                             🐾
                         </span>
 
-
                         <div>
 
                             <h3>
                                 Serviço personalizado
                             </h3>
-
 
                             <p>
 
@@ -780,14 +1056,104 @@
 
 
 
-                    <!-- PET TAXI -->
+                    <div class="booking-info-note">
+
+                        <strong>
+                            Preços
+                        </strong>
+
+                        <p>
+                            Pet Sitting — 8 € / hora
+                        </p>
+
+                        <p>
+                            Passeio 30 min — 6 €
+                        </p>
+
+                        <p>
+                            Passeio 60 min — 10 €
+                        </p>
+
+                        <p>
+                            Essencial — até 6 h — 45 €
+                        </p>
+
+                        <p>
+                            Conforto — até 8 h — 58 €
+                        </p>
+
+                        <p>
+                            Completo — até 10 h — 70 €
+                        </p>
+
+                        <p>
+                            Entre Patas Taxi — mediante distância
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="booking-info-note">
+
+                        <strong>
+                            Packs Entre Patas
+                        </strong>
+
+                        <p>
+
+                            Todos os packs incluem
+                            acompanhamento, alimentação e água,
+                            manutenção da rotina habitual,
+                            passeio e atualizações ao tutor.
+
+                        </p>
+
+                        <p>
+
+                            O Pack Conforto acrescenta
+                            banho simples, quando adequado
+                            e combinado previamente.
+
+                        </p>
+
+                        <p>
+
+                            O Pack Completo acrescenta
+                            cuidados básicos de higiene.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="booking-info-note">
+
+                        <strong>
+                            Pet Sitting prolongado
+                        </strong>
+
+                        <p>
+
+                            Para períodos de várias horas,
+                            o valor por hora poderá ser ajustado.
+
+                            Qualquer valor diferente dos 8 € / hora
+                            é sempre combinado e confirmado
+                            previamente contigo.
+
+                        </p>
+
+                    </div>
+
+
 
                     <div class="booking-info-note">
 
                         <strong>
                             Entre Patas Taxi
                         </strong>
-
 
                         <p>
 
@@ -801,6 +1167,31 @@
 
                             Indica a origem, destino, data e hora
                             necessárias para o transporte.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="booking-info-note">
+
+                        <strong>
+                            Contacto
+                        </strong>
+
+                        <p>
+
+                            Se tiveres alguma dúvida,
+                            podes enviar um email para:
+
+                        </p>
+
+                        <p>
+
+                            <a href="mailto:entrepatas.servicos@gmail.com">
+                                entrepatas.servicos@gmail.com
+                            </a>
 
                         </p>
 
@@ -827,8 +1218,6 @@
         <div class="container footer-grid">
 
 
-            <!-- MARCA -->
-
             <div class="footer-brand">
 
                 <a href="trabalho.html"
@@ -838,7 +1227,6 @@
                          alt="Entre Patas - Cuidado em cada passo">
 
                 </a>
-
 
                 <p>
 
@@ -853,14 +1241,11 @@
 
 
 
-            <!-- SERVIÇOS -->
-
             <div>
 
                 <h3>
                     Serviços
                 </h3>
-
 
                 <ul>
 
@@ -894,14 +1279,11 @@
 
 
 
-            <!-- ENTRE PATAS -->
-
             <div>
 
                 <h3>
                     Entre Patas
                 </h3>
-
 
                 <ul>
 
@@ -929,13 +1311,17 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="login.html">
+                            Área reservada
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
 
 
-
-            <!-- CONTACTO -->
 
             <div>
 
@@ -943,20 +1329,42 @@
                     Contacto
                 </h3>
 
-
                 <p>
-                    📍 Distritos de Braga e Porto
-                </p>
 
+                    📍 Santo Tirso, Vila Nova de Famalicão,
+                    Trofa e Guimarães
+
+                </p>
 
                 <p>
                     Telefone: em breve
                 </p>
 
+                <p>
+
+                    Email:
+
+                    <a href="mailto:entrepatas.servicos@gmail.com">
+                        entrepatas.servicos@gmail.com
+                    </a>
+
+                </p>
 
                 <p>
-                    Email: em breve
+
+                    Tens alguma dúvida sobre os serviços,
+                    preços ou necessidades do teu animal?
+
+                    Envia um email.
+
                 </p>
+
+                <a href="mailto:entrepatas.servicos@gmail.com"
+                   class="btn btn-secondary">
+
+                    Enviar email
+
+                </a>
 
             </div>
 
@@ -965,29 +1373,22 @@
 
 
 
-        <!-- PARTE INFERIOR DO FOOTER -->
-
         <div class="container footer-bottom">
-
 
             <p>
                 &copy; 2026 Entre Patas.
                 Todos os direitos reservados.
             </p>
 
-
             <p>
                 Feito com ♡ para os teus animais.
             </p>
-
 
         </div>
 
     </footer>
 
 
-
-    <!-- JAVASCRIPT -->
 
     <script src="trabalho.js"></script>
 

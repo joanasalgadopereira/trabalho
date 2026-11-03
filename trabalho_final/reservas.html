@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Reservas | Entre Patas
+    </title>
+
+    <link rel="stylesheet"
+          href="trabalho.css">
+
+</head>
+
+
+<body>
+
+
+    <main>
+
+        <section class="reservas">
+
+
+            <!-- CABEÇALHO DA ÁREA DE RESERVAS -->
+
+            <div class="reservas-header">
+
+                <div class="reservas-header-topo">
+
+                    <p class="section-label">
+                        Gestão de reservas
+                    </p>
+
+
+                    <div class="reservas-acoes">
+
+
+                        <a href="trabalho.html"
+                           class="btn btn-secondary">
+
+                            ← Voltar ao site
+
+                        </a>
+
+
+                        <a href="admin.html"
+                           id="voltar_painel"
+                           class="btn btn-secondary"
+                           hidden>
+
+                            ← Voltar ao painel
+
+                        </a>
+
+
+                        <a href="login.html"
+                           id="entrar_admin"
+                           class="btn btn-secondary">
+
+                            Entrar
+
+                        </a>
+
+
+                        <button type="button"
+                                id="terminar_sessao"
+                                class="btn btn-secondary"
+                                hidden>
+
+                            Terminar sessão
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+                <h1>
+                    Reservas
+                </h1>
+
+
+                <p id="texto_area_reservas">
+
+                    Inicia sessão para consultar e gerir as reservas.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FILTROS DAS RESERVAS -->
+
+            <div class="reservas-filtros"
+                 id="filtros_reservas">
+
+
+                <div class="form-group">
+
+                    <label for="pesquisa_reserva">
+                        Pesquisar
+                    </label>
+
+                    <input type="search"
+                           id="pesquisa_reserva"
+                           placeholder="Tutor, animal, email, espécie ou serviço">
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="filtro_estado">
+                        Estado
+                    </label>
+
+                    <select id="filtro_estado">
+
+                        <option value="">
+                            Todos
+                        </option>
+
+                        <option value="pendente">
+                            Pendente
+                        </option>
+
+                        <option value="confirmada">
+                            Confirmada
+                        </option>
+
+                        <option value="concluida">
+                            Concluída
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="ordenar_reservas">
+                        Ordenar
+                    </label>
+
+                    <select id="ordenar_reservas">
+
+                        <option value="data_asc">
+                            Data mais próxima
+                        </option>
+
+                        <option value="data_desc">
+                            Data mais distante
+                        </option>
+
+                        <option value="animal">
+                            Nome do animal
+                        </option>
+
+                        <option value="tutor">
+                            Nome do tutor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- LISTA DAS RESERVAS -->
+
+            <div id="lista_reservas"
+                 aria-live="polite">
+
+                <p>
+                    A carregar reservas...
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <script src="reservas.js"></script>
+
+
+</body>
+
+</html>
